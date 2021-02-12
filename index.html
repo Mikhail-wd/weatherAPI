@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Погода</title>
+    <script src="js/city_on_load.js"></script>
+    <script src="js/city_on_click.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
+  </head>
+  <body onload="newData()">
+    <div class="content">
+        <select class="selector" name="menu" size="1" id="citys">
+            <option selected="selected" value="first">Москва</option>
+            <option value="second">Новосибирск</option>
+            <option value="third">Владивосток</option>
+            <option value="fourth">Париж</option>
+        </select>
+        <p>Сейчас в городе <b id ="temp"></b> градусов Цельсия.</p>
+        <p>Ощущается как <b id ="feelsLike"></b> градусов Цельсия. </p>
+        <p>Давление ртутного столба <b id ="pres"></b> мм рт. ст.</p>
+        <p>Направление ветра <b id ="wind"></b></p>
+        <p>Скорость ветра <b id ="windSpeed"></b> м/с. </p>
+        <button class = "button_red" onclick="citySelect()">Запросить</button>
+    </div>
+  </body>
+</html>
