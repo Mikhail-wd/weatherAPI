@@ -4,6 +4,9 @@ body {
 	font-family: 'Roboto Slab', serif;
 
 }
+.feed{
+	display: block;
+}
 
 .bordr{
 	border-radius: 12px/12px;
@@ -31,6 +34,8 @@ textarea{
 }
 .data{
 	margin-top: 90px;
+
+	min-height: 250px;
 }
 .text_top{
 	width: 440px;

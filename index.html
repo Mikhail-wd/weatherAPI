@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Погода</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
-    <script src="js/city_on_load.js"></script>
     <script src="js/city_on_click.js"></script>
+    <script src="js/city_on_load.js"></script>
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
   </head>
   <body onload="newData()">
@@ -15,68 +15,24 @@
             <div class="select">
                 <div>
                     <p>Укажите город</p>
-                    <textarea>Moscow</textarea>
-                    <a href="" class="button">Найти</a>
+                    <textarea id="search">Лондон</textarea>
+                    <a href="#" class="button" onclick="citySelect()">Найти</a>
                 </div>
             </div>
             <div class="data">
                 <div>
-                    <h1 class="left-col-title"><b>Moscow<img class="left-col-set cog" src="img/cog-solid.svg"></b></h1>
-                    <h1 class="left-col-title"><b>+ 40</b></h1>
+                    <h1 class="left-col-title"><b id="titleCity">Moscow</b> <img class="left-col-set cog feed" src="img/cog-solid.svg"></h1>
+                    <h1 class="left-col-title feed"><b id="temp">+ 40</b></h1>
                 </div>
-                <div class="left-col-data">                    
-                    <h1>Ощущается как +30. Ветер юго-западный, скорость 666 м/с.</h1>
+                <div class="left-col-data feed">                    
+                    <h1>Ощущается как <b id="feelsLike">+30</b>. Ветер <b id="wind">юго-западный</b>, скорость <b id="windSpeed">666</b> м/с. Давление ртутного столба <b id="pres">1000 . </b></h1>
                 </div>
-                <div class="left-col-like">
-                    <img src="img/heart.svg" class="heart">
+                <div class="left-col-like feed">
+                    <img onclick="favorite()" src="img/heart.svg" class="heart">
                 </div>
             </div>
         </div>
-        <div class="right-col">
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>
-            <div class="city-like bordr">
-                <h1>Moscow </h1><img src="img/close-button.svg" class="cancel-x">
-                <h1> +40</h1><img src="img/cog-solid-black.svg" class="cog-right">
-            </div>            
+        <div id="right-col" class="right-col">                        
         </div>
     </div>
   </body>

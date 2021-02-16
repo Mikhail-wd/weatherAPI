@@ -1,32 +1,33 @@
-var moscow = new XMLHttpRequest();
-moscow.open ("GET", "https://api.openweathermap.org/data/2.5/weather?q=Moscow&units=metric&appid=45dfa3308548a42f21500c760482c10e", false);
-moscow.send (null);
-var moscowJson = JSON.parse(moscow.responseText);
+function newData(city="лондон") {
+	var newCity = new XMLHttpRequest();
+	newCity.open ("GET", "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=45dfa3308548a42f21500c760482c10e", false);
+	newCity.send (null);
 
-var novosibirsk = new XMLHttpRequest();
-novosibirsk.open ("GET", "https://api.openweathermap.org/data/2.5/weather?q=Novosibirsk&units=metric&appid=45dfa3308548a42f21500c760482c10e", false);
-novosibirsk.send (null);
-var novosibirskJson= JSON.parse(novosibirsk.responseText);
+	if(newCity.status==404){
 
-var paris = new XMLHttpRequest();
-paris.open ("GET", "https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=45dfa3308548a42f21500c760482c10e", false);
-paris.send (null);
-var parisJson= JSON.parse(paris.responseText);
+		//Переделать на цикл.
+		document.getElementsByClassName("feed")[0].style.display="none";
+		document.getElementsByClassName("feed")[1].style.display="none";
+		document.getElementsByClassName("feed")[2].style.display="none";
+		document.getElementsByClassName("feed")[3].style.display="none";
+		document.getElementById("titleCity").innerHTML = "Не найден.";
+	} else {
+		var newCityJson=JSON.parse(newCity.responseText);
+		document.getElementsByClassName("feed")[0].style.display="block";
+		document.getElementsByClassName("feed")[1].style.display="block";
+		document.getElementsByClassName("feed")[2].style.display="block";
+		document.getElementsByClassName("feed")[3].style.display="block";
+		document.getElementById("titleCity").innerHTML = city.charAt(0).toUpperCase()+city.slice(1);
+		document.getElementById("temp").innerHTML = newCityJson.main.temp;
+		document.getElementById("feelsLike").innerHTML = newCityJson.main.feels_like;
+		document.getElementById("pres").innerHTML = newCityJson.main.pressure;
+		document.getElementById("wind").innerHTML = windDerect(newCityJson.wind.deg);
+		document.getElementById("windSpeed").innerHTML = newCityJson.wind.speed;
+	};
 
-var vladivostok = new XMLHttpRequest();
-vladivostok.open ("GET", "https://api.openweathermap.org/data/2.5/weather?q=Vladivostok&units=metric&appid=45dfa3308548a42f21500c760482c10e", false);
-vladivostok.send (null);
-var vladivostokJson= JSON.parse(vladivostok.responseText);
-
-function newData(city=moscowJson) {
-	document.getElementById("temp").innerHTML = city.main.temp;
-	document.getElementById("feelsLike").innerHTML = city.main.feels_like;
-	document.getElementById("pres").innerHTML = city.main.pressure;
-	document.getElementById("wind").innerHTML = windDerect(city.wind.deg);
-	document.getElementById("windSpeed").innerHTML = city.wind.speed;
 };
 
-var windDerect = function(value){
+function windDerect(value){
 	if (value <= 45) {
 		return("Западный");
 	};
