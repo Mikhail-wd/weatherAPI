@@ -1,10 +1,15 @@
 
 /* Нужно исправить: фоновая картинка должна помещаться на экран полностью. Сейчас отображен только верхний левый угол. */
+/*--Update 17.02-- Подогнал как на макете.*/
 body {
 	display: block;
+	background-position: 50% 25%;
 	background-image: url(../img/back.jpeg);
 	font-family: 'Roboto Slab', serif;
 
+}
+.nonInterface{
+	display:none;
 }
 .feed{
 	display: block;
@@ -20,17 +25,16 @@ p{
 h1{
 	color:white;
 	font-size: 21px;
-	margin-block: 0px;
+	margin: 0px;
 
 }
 
-textarea{
+.textarea{
 	border-radius: 30px;
-	font-size: 26px;
-	min-width: 440px;
-	max-width: 440px;
-	min-height: 35px;
-	max-height: 35px;
+	font-size: 46px;
+	font-family: 'Roboto Slab', serif;
+	width: 400px;
+	height: 55px;
 	padding: 5px 20px;
 	background-color: rgb(203,234,249);
 }
@@ -56,12 +60,12 @@ textarea{
 	color: white;
 }
 .content {
+	width: 1600px;
 	background-color: rgba(0, 0, 0, .7);
 	text-decoration-color: white;
-	min-height: 520px;
+	margin: auto;
+	min-height: 550px;
 	margin-top: 90px;
-	margin-left: 150px;
-	margin-right: 150px;
 	padding-top: 10px;
 }
 .left-col{
@@ -96,6 +100,8 @@ textarea{
 	margin-top: 30px;
 }
 .left-col-set{
+	margin-right: -25px;
+	height: 90px;
 	float: right;
 }
 
@@ -103,22 +109,23 @@ textarea{
 
 /* Избегай фиксированной высоты для контейнеров. Если сейчас добавить в избанное 3 карточки, то 3я появится на следующей строке с большим отступом от предыдущей */
 /* Фиксированная высота используется только там, где без нее не обойтись. В остальных случаях контейнер автоматически подстроит высоту под контент в нем */
+/*--Update 17.02-- Подогнал как нужно для скролинга в деесктоп и мобильной версии.*/
 .right-col {
 	overflow: auto;
 	float:right;
 	display:flex;
-	height: 410px;
+	max-height: 420px;
 	flex-wrap: wrap;
 	width: 775px;
 	margin-right:30px;
-	margin-top: 25px;
+	margin-top: 50px;
 	padding: 4px;
 }
 
 .city-like{
 	margin-right: 16px;
 	margin-top:10px;
-	background-color: rgba(97, 109,123);
+	background-color: rgba(97, 109, 123, 0.7);
 	min-width: 320px;
 	height: 90px;
 	padding: 19px;
@@ -132,9 +139,9 @@ textarea{
 
 }
 .cog-right{
-	margin-top: -50px;
+	margin-top: -60px;
 	float:right;
-	height: 40px;
+	height: 80px;
 }
 .cancel-x {
 	margin-top: -50px;
@@ -144,7 +151,7 @@ textarea{
 
 @media screen and (max-width: 650px ){
 .content {
-	min-width: 620px;
+	width: 620px;
 	text-decoration-color: white;
 	min-height: 1200px;
 	margin-top: 50px;
@@ -152,18 +159,18 @@ textarea{
 	padding-top: 10px;
 }	
 
-textarea{
+.textarea{
 	border-radius: 30px;
-	font-size: 26px;
-	min-width: 300px;
-	max-width: 300px;
-	min-height: 35px;
-	max-height: 35px;
+	font-size: 46px;
+	font-family: 'Roboto Slab', serif;
+	width: 300px;
+	height: 55px;
 	padding: 5px 20px;
 	background-color: rgb(203,234,249);
 }
 
 .button{
+	margin-left: 400px;
 	display: block;
 	width: 95px;
  	text-decoration: none;
@@ -171,35 +178,33 @@ textarea{
 	background-color: rgb(111,62,234);
 	font-size: 26px;
 	padding: 8px 8px;
-	margin: -55px 380px;
 	border-radius: 10px;
 	color: white;
 }
 
-.cog{
-	display:none;
-	height: 50px;
-}
 .heart{
 	margin-top: -50px;
 	float:right;
+	margin-right: 115px;
 	height: 40px;
-	margin-right: 200px;
 }
 .left-col-data{
 	width: 425px;
 	font-size: 22px;
 	margin-top: 30px;
 }
+.left-col-set{
+	margin-right: 90px;
+}
 
 .right-col {
 	overflow: auto;
 	float:right;
 	display:flex;
-	height: 680px;
+	max-height: 690px;
 	flex-wrap: wrap;
 	width: 360px;
-	margin-right:100px;
+	margin-right:120px;
 	margin-top: 25px;
 	padding: 4px;
 }
