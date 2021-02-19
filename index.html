@@ -9,7 +9,7 @@
     <script src="js/city_on_load.js"></script>
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
   </head>
-  <body onload="newData()">
+  <body onload="firstLoad()">
     <div class="content bordr">
         <div class="left-col">
             <div class="select">
@@ -18,7 +18,7 @@
                     <!-- Нужно исправить: в запросе фигурирует только короткое имя города. Здесь подойдет input вместо textarea -->
                     <!-- Шрифт у вводимого текста должен быть Roboto+ Slab -->
                     <!----Update 17.02-- Исправил как на макете. -->
-                    <input class="textarea" type="text" size=40 value="Лондон" id="search"><br>
+                    <input class="textarea" type="text" size=40 value="" id="search"><br>
                     <a href="#" class="button" onclick="citySelect()">Найти</a>
                 </div>
             </div>
@@ -29,8 +29,8 @@
                     <!-- Нужно исправить: иконки должны быть с https://fontawesome.com/ -->
                     <!-- Тут изображена шестеренка, а должно быть солнце -->
                     <!----Update 17.02-- Сделал иконки погоды соглавно API.. -->
-                    <h1 class="left-col-title"><b id="titleCity">Moscow</b> <img id="png" class="left-col-set cog feed" src="http://openweathermap.org/img/wn/10d@2x.png"></h1>
-                    <h1 class="left-col-title feed"><b id="temp">+ 40</b></h1>
+                    <h1 class="left-col-title"><b id="titleCityLeft">Moscow</b> <img id="png" class="left-col-set cog feed" src="http://openweathermap.org/img/wn/10d@2x.png"></h1>
+                    <h1 class="left-col-title feed"><b id="tempLeft">+ 40</b></h1>
                 </div>
 
                 <!-- Нужно исправить: данные о погоде ниже по макету идут в столбик -->
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div id="right-col" class="right-col">                        
+        <div id="right-col" class="right-col" onLoad="plates()">                        
         </div>
     </div>
   </body>
