@@ -5,7 +5,6 @@ function newData(city="лондон") {
 
 	if(newCity.status==404){
 
-		//Переделать на цикл.
 		document.getElementsByClassName("feed")[0].style.display="none";
 		document.getElementsByClassName("feed")[1].style.display="none";
 		document.getElementsByClassName("feed")[2].style.display="none";

@@ -15,27 +15,19 @@
             <div class="select">
                 <div>
                     <p>Укажите город</p>
-                    <!-- Нужно исправить: в запросе фигурирует только короткое имя города. Здесь подойдет input вместо textarea -->
-                    <!-- Шрифт у вводимого текста должен быть Roboto+ Slab -->
                     <textarea id="search">Лондон</textarea>
                     <a href="#" class="button" onclick="citySelect()">Найти</a>
                 </div>
             </div>
-            <!-- Карточки доже должны быть полупрозрачными как в макере -->
             <div class="data">
                 <div>
-                    <!-- Нужно исправить: иконки должны быть с https://fontawesome.com/ -->
-                    <!-- Тут изображена шестеренка, а должно быть солнце -->
                     <h1 class="left-col-title"><b id="titleCity">Moscow</b> <img class="left-col-set cog feed" src="img/cog-solid.svg"></h1>
                     <h1 class="left-col-title feed"><b id="temp">+ 40</b></h1>
                 </div>
-
-                <!-- Нужно исправить: данные о погоде ниже по макету идут в столбик -->
                 <div class="left-col-data feed">                    
                     <h1>Ощущается как <b id="feelsLike">+30</b>. Ветер <b id="wind">юго-западный</b>, скорость <b id="windSpeed">666</b> м/с. Давление ртутного столба <b id="pres">1000 . </b></h1>
                 </div>
                 <div class="left-col-like feed">
-                    <!-- В макете рядом с сердцем была еще мусорная корзина -->
                     <img onclick="favorite()" src="img/heart.svg" class="heart">
                 </div>
             </div>
