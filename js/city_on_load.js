@@ -2,13 +2,10 @@ if (localStorage.getItem("citys_on_exit")){
 
 	var citysList = localStorage.getItem("citys_on_exit");
 	var indexOfCitys = citysList.split(",");
-
 } else {
-
 	localStorage.setItem("citys_on_exit","");
 	var citysList = localStorage.getItem("citys_on_exit");
 	var indexOfCitys = citysList.split(",");
-
 	function firstLoad(){
 		newData();
 		plates();
@@ -48,8 +45,8 @@ function newData(city="") {
 		document.getElementById("wind").innerHTML = windDerect(newCityJson.wind.deg);
 		document.getElementById("windSpeed").innerHTML = newCityJson.wind.speed;
 	};
-
 };
+
 function plates(){
 
 	var dataForRec=citysList.split(",");
@@ -65,10 +62,11 @@ function plates(){
 		var cityName=dataForRec[y];
 		var cityTemp=newCityJson.main.temp;
 		var icon=document.getElementById("png").src = "http://openweathermap.org/img/wn/"+newCityJson.weather[0].icon+"@2x.png";
-		rightCol.insertAdjacentHTML("beforeend",`<div id="`+cityName+`" class="city-like `+cityName+` bordr"><h1>`+cityName+" "+`</h1><img onclick="deleteTemp('`+cityName+`')" src="img/close-button.svg" class="cancel-x"><h1>`+cityTemp+`</h1><img src=`+icon+` class="cog-right"></div>`);
+		rightCol.insertAdjacentHTML("beforeend",`<div id="`+cityName+`" class="city-like `+cityName+` bordr"><h1>`+cityName+" "+`</h1><img onclick="deleteTemp('`+cityName+`')" src="img/close-button.svg" class="cancel-x"><h1>`+cityTemp+`°C</h1><img src=`+icon+` class="cog-right"></div>`);
 		
 	}
 };
+
 function windDerect(value){
 	if (value <= 45) {
 		return("Западный");

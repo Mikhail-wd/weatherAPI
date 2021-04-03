@@ -17,7 +17,7 @@ function citySelect(){
 
 function favorite(){
 
-	if(indexOfCitys.includes(cityName=document.getElementById("search").value)) {
+	if(citysList.includes(cityName=document.getElementById("search").value)) {
 
 		return(alert("Уже есть."));
 
@@ -27,7 +27,7 @@ function favorite(){
 		var cityTemp=document.getElementById("tempLeft").innerText;
 		var icon=document.getElementById("png").src;
 		var docID=document.getElementById("cityID").innerHTML;
-		rightCol.insertAdjacentHTML("beforeend",`<div id="`+cityName+`" class="city-like `+cityName+` bordr"><h1>`+cityName+" "+`</h1><img onclick="deleteTemp('`+cityName+`')" src="img/close-button.svg" class="cancel-x"><h1>`+cityTemp+`</h1><img src=`+icon+` class="cog-right"></div>`);
+		rightCol.insertAdjacentHTML("beforeend",`<div id="`+cityName+`" class="city-like `+cityName+` bordr"><h1>`+cityName+" "+`</h1><img onclick="deleteTemp('`+cityName+`')" src="img/close-button.svg" class="cancel-x"><h1>`+cityTemp+`°C</h1><img src=`+icon+` class="cog-right"></div>`);
 		
 		citysList=citysList+cityName+",";
 		localStorage.setItem("citys_on_exit",citysList);

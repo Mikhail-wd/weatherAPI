@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Погода</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
-    <script src="js/city_on_click.js"></script>
     <script src="js/city_on_load.js"></script>
+    <script src="js/city_on_click.js"></script>
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
   </head>
   <body onload="firstLoad()">
@@ -22,10 +22,10 @@
             <div class="data">
                 <div>
                     <h1 class="left-col-title"><b id="titleCityLeft">Moscow</b> <img id="png" class="left-col-set cog feed" src="http://openweathermap.org/img/wn/10d@2x.png"></h1>
-                    <h1 class="left-col-title feed"><b id="tempLeft">+ 40</b></h1>
+                    <h1 class="left-col-title feed"><b id="tempLeft">+ 40</b>°C</h1>
                 </div>
                 <div class="left-col-data feed">                    
-                    <h1>Ощущается как <b id="feelsLike">+30</b>.<br> Ветер <b id="wind">юго-западный</b>.<br> Cкорость ветра <b id="windSpeed">666</b> м/с.<br> Давление ртутного столба <b id="pres">1000</b>.<b id="cityID" class="nonInterface"></b></h1>
+                    <h1>Ощущается как <b id="feelsLike">+30</b>°C.<br> Ветер <b id="wind">юго-западный</b>.<br> Cкорость ветра <b id="windSpeed">666</b> м/с.<br> Давление ртутного столба <b id="pres">1000</b> мм.<b id="cityID" class="nonInterface"></b></h1>
                 </div>
                 <div class="left-col-like feed">
                     <img onclick="favorite()" src="img/heart.svg" class="heart">
