@@ -10,7 +10,6 @@ if (localStorage.getItem("citys_on_exit")){
 	var indexOfCitys = citysList.split(",");
 
 	function firstLoad(){
-		//indexOfCitys.push("Лондон");
 		newData();
 		plates();
 	};
@@ -20,7 +19,6 @@ var citysList = localStorage.getItem("citys_on_exit");
 var indexOfCitys = citysList.split(",");
 
 function firstLoad(){
-	//indexOfCitys.push("Лондон");
 	newData();
 	plates();
 };
@@ -31,8 +29,6 @@ function newData(city="") {
 	newCity.send (null);
 
 	if(newCity.status==404 || newCity.status==400 ){
-
-		//Переделать на цикл.
 		document.getElementsByClassName("feed")[0].style.display="none";
 		document.getElementsByClassName("feed")[1].style.display="none";
 		document.getElementsByClassName("feed")[2].style.display="none";
@@ -45,9 +41,7 @@ function newData(city="") {
 		document.getElementsByClassName("feed")[2].style.display="block";
 		document.getElementsByClassName("feed")[3].style.display="block";
 		document.getElementById("titleCityLeft").innerHTML = city.charAt(0).toUpperCase()+city.slice(1);
-		//http://openweathermap.org/img/wn/10d@2x.png
 		document.getElementById("png").src = "http://openweathermap.org/img/wn/"+newCityJson.weather[0].icon+"@2x.png";
-		//document.getElementById("cityID").innerHTML = newCityJson.id;
 		document.getElementById("tempLeft").innerHTML = newCityJson.main.temp;
 		document.getElementById("feelsLike").innerHTML = newCityJson.main.feels_like;
 		document.getElementById("pres").innerHTML = newCityJson.main.pressure;

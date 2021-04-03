@@ -15,32 +15,19 @@
             <div class="select">
                 <div>
                     <p>Укажите город</p>
-                    <!-- Нужно исправить: в запросе фигурирует только короткое имя города. Здесь подойдет input вместо textarea -->
-                    <!-- Шрифт у вводимого текста должен быть Roboto+ Slab -->
-                    <!----Update 17.02-- Исправил как на макете. -->
                     <input class="textarea" type="text" size=40 value="" id="search"><br>
                     <a href="#" class="button" onclick="citySelect()">Найти</a>
                 </div>
             </div>
-            <!-- Карточки доже должны быть полупрозрачными как в макере -->
-            <!----Update 17.02-- Исправил как на макете. -->
             <div class="data">
                 <div>
-                    <!-- Нужно исправить: иконки должны быть с https://fontawesome.com/ -->
-                    <!-- Тут изображена шестеренка, а должно быть солнце -->
-                    <!----Update 17.02-- Сделал иконки погоды соглавно API.. -->
                     <h1 class="left-col-title"><b id="titleCityLeft">Moscow</b> <img id="png" class="left-col-set cog feed" src="http://openweathermap.org/img/wn/10d@2x.png"></h1>
                     <h1 class="left-col-title feed"><b id="tempLeft">+ 40</b></h1>
                 </div>
-
-                <!-- Нужно исправить: данные о погоде ниже по макету идут в столбик -->
-                <!----Update 17.02-- Исправил как на макете. -->
                 <div class="left-col-data feed">                    
                     <h1>Ощущается как <b id="feelsLike">+30</b>.<br> Ветер <b id="wind">юго-западный</b>.<br> Cкорость ветра <b id="windSpeed">666</b> м/с.<br> Давление ртутного столба <b id="pres">1000</b>.<b id="cityID" class="nonInterface"></b></h1>
                 </div>
                 <div class="left-col-like feed">
-                    <!-- В макете рядом с сердцем была еще мусорная корзина -->                
-                    <!----Update 17.02-- Решили отказатся от корзины. -->
                     <img onclick="favorite()" src="img/heart.svg" class="heart">
                 </div>
             </div>
