@@ -52,7 +52,7 @@ function plates(){
 	var dataForRec=citysList.split(",");
 	var x=(dataForRec.length);
 
-	for (y=0; y<x; y++){
+	for (y=0; y<x-1; y++){
 		var newCity = new XMLHttpRequest();
 		newCity.open ("GET", "https://api.openweathermap.org/data/2.5/weather?q="+dataForRec[y]+"&units=metric&appid=45dfa3308548a42f21500c760482c10e", false);
 		newCity.send (null);
