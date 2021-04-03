@@ -1,23 +1,47 @@
 function citySelect(){
 
 	var city = document.getElementById("search").value;
+	if(city==""){
+
+		document.getElementById("titleCityLeft").innerHTML = "Так ты и не искал.";
+		document.getElementsByClassName("feed")[0].style.display="none";
+		document.getElementsByClassName("feed")[1].style.display="none";
+		document.getElementsByClassName("feed")[2].style.display="none";
+		document.getElementsByClassName("feed")[3].style.display="none";
+
+	} else {
 	newData(city);
+	};
 
 };
-
-var counts=0;
 
 function favorite(){
 
-	var rightCol=document.getElementById("right-col");
-	var cityName=document.getElementById("titleCity").innerText;
-	var cityTemp=document.getElementById("temp").innerText;
+	if(indexOfCitys.includes(cityName=document.getElementById("search").value)) {
 
-	rightCol.insertAdjacentHTML("beforeend",`<div class="city-like bordr"><h1>`+cityName+`</h1><img src="img/close-button.svg" class="cancel-x"><h1>`+cityTemp+`</h1><img src="img/cog-solid-black.svg" class="cog-right"></div>`);
-	return(counts++);
+		return(alert("Уже есть."));
+
+	} else {
+		var rightCol=document.getElementById("right-col");
+		var cityName=document.getElementById("titleCityLeft").innerText;
+		var cityTemp=document.getElementById("tempLeft").innerText;
+		var icon=document.getElementById("png").src;
+		var docID=document.getElementById("cityID").innerHTML;
+		rightCol.insertAdjacentHTML("beforeend",`<div id="`+cityName+`" class="city-like `+cityName+` bordr"><h1>`+cityName+" "+`</h1><img onclick="deleteTemp('`+cityName+`')" src="img/close-button.svg" class="cancel-x"><h1>`+cityTemp+`</h1><img src=`+icon+` class="cog-right"></div>`);
+		
+		citysList=citysList+cityName+",";
+		localStorage.setItem("citys_on_exit",citysList);
+	}
 };
 
-var counts;
-function deleteFavorite(){
+function deleteTemp(valueOfID=""){
 
-};
+	var cityID = document.getElementById(valueOfID);
+	cityID.parentNode.removeChild(cityID);
+	var indexToDelete=indexOfCitys.indexOf(valueOfID);
+
+	citysList=citysList.replace(valueOfID+",", "")
+
+	localStorage.setItem("citys_on_exit",citysList);
+
+}
